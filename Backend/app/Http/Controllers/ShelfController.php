@@ -7,11 +7,6 @@ use App\Shelf;
 
 class ShelfController extends Controller
 {
-    public function index(){
-        $shelves = Shelf::all();
-        if ($shelves) { return response()->json([$shelves]); } 
-        else { return response()->error("No shelves on database",400); }
-    }
     public function store(Request $req) {
         $shelf = new Shelf;
         $shelf->library_id = $req->library_id;
@@ -20,11 +15,6 @@ class ShelfController extends Controller
         $shelf->index = $req->index;
         $shelf->save();
         return response()->json([$shelf]);
-    }
-    public function show($id) {
-        $shelf = Shelf::findOrFail($id);
-        if ($shelf) { return response()->json([$shelf]);}
-        else return response()->error("Shelf doesn't exist",400);
     }
     public function update(Request $req, $id) {
         $shelf = Shelf::findOrFail($id);
