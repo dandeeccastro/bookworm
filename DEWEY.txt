@@ -6,12 +6,10 @@
         004 Data processing & computer science
         005 Computer programming, programs & data
         006 Special computer methods
-        007–009 [Unassigned]
     010 Bibliographies
         010 Bibliography
         011 Bibliographies
         012 Bibliographies of individuals
-        013 [Unassigned]
         014 Bibliographies of anonymous & pseudonymous works
         015 Bibliographies of works from specific places
         016 Bibliographies of works on specific subjects
@@ -23,12 +21,10 @@
         021 Library relationships (with archives, information centers, etc.)
         022 Administration of physical plant
         023 Personnel management
-        024 [Unassigned]
         025 Library operations
         026 Libraries for specific subjects
         027 General libraries
         028 Reading & use of other information media
-        029 [Unassigned]
     030 Encyclopedias & books of facts
         030 General encyclopedic works
         031 Encyclopedias in American English
@@ -40,7 +36,6 @@
         037 Encyclopedias in Slavic languages
         038 Encyclopedias in Scandinavian languages
         039 Encyclopedias in other languages
-    040 Unassigned (formerly Biographies)
     050 Magazines, journals & serials
         050 General serial publications
         051 Serials in American English
@@ -96,15 +91,12 @@
         097 Books notable for ownership or origin
         098 Prohibited works, forgeries, and hoaxes
         099 Books notable for format
-
-Class 100 – Philosophy & psychology
-
+ 100 – Philosophy & psychology
     100 Philosophy
         100 Philosophy & psychology
         101 Theory of philosophy
         102 Miscellany
         103 Dictionaries & encyclopedias
-        104 [Unassigned]
         105 Serial publications
         106 Organizations & management
         107 Education, research, related topics of philosophy
@@ -169,7 +161,6 @@ Class 100 – Philosophy & psychology
         160 Philosophical logic
         161 Induction
         162 Deduction
-        163–164 Not assigned or no longer used
         165 Fallacies & sources of error
         166 Syllogisms
         167 Hypotheses
@@ -208,9 +199,7 @@ Class 100 – Philosophy & psychology
         197 Philosophy of Russia
         198 Philosophy of Scandinavia & Finland
         199 Philosophy in other geographic areas
-
-Class 200 – Religion
-
+ 200 – Religion
     200 Religion
         200 Religion
         201 Religious mythology, general classes of religion, interreligious relations and attitudes, social theology
@@ -321,9 +310,7 @@ Class 200 – Religion
         297 Islam, Bábism & Bahá'í Faith
         298 No longer used—formerly Mormonism
         299 Religions not provided for elsewhere
-
-Class 300 – Social sciences
-
+ 300 – Social sciences
     300 Social sciences, sociology & anthropology
         300 Social sciences
         301 Sociology & anthropology
@@ -434,9 +421,7 @@ Class 300 – Social sciences
         397 No longer used—formerly outcast studies
         398 Folklore
         399 Customs of war & diplomacy
-
-Class 400 – Language
-
+ 400 – Language
     400 Language
         400 Language
         401 Philosophy & theory; international languages
@@ -547,9 +532,7 @@ Class 400 – Language
         497 North American native languages
         498 South American native languages
         499 Non-Austronesian languages of Oceania, Austronesian languages, miscellaneous languages
-
-Class 500 – Science
-
+ 500 – Science
     500 Science
         500 Natural sciences & mathematics
         501 Philosophy & theory
@@ -660,9 +643,7 @@ Class 500 – Science
         597 Cold-blooded vertebrates
         598 Aves (Birds)
         599 Mammalia (Mammals)
-
-Class 600 – Technology
-
+ 600 – Technology
     600 Technology
         600 Technology (Applied sciences)
         601 Philosophy & theory
@@ -746,7 +727,6 @@ Class 600 – Technology
         651 Office services
         652 Processes of written communication
         653 Shorthand
-        654–656 Not assigned or no longer used
         657 Accounting
         658 General management
         659 Advertising & public relations
@@ -794,9 +774,7 @@ Class 600 – Technology
         697 Heating, ventilating, air-conditioning engineering
         698 Detail finishing
         699 Not assigned or no longer used
-
-Class 700 – Arts & recreation
-
+ 700 – Arts & recreation
     700 Arts
         700 The Arts
         701 Philosophy & theory of fine & decorative arts
@@ -895,7 +873,6 @@ Class 700 – Arts & recreation
         786 Keyboard, mechanical, electrophonic, percussion instruments
         787 Stringed instruments (Chordophones)
         788 Wind instruments (Aerophones)
-        789 Unassigned or no longer used 
     790 Outline of sports, games & entertainment
         790 Recreational & performing arts
         791 Public performances
@@ -907,9 +884,7 @@ Class 700 – Arts & recreation
         797 Aquatic & air sports
         798 Equestrian sports & animal racing
         799 Fishing, hunting, shooting
-
-Class 800 – Literature
-
+ 800 – Literature
     800 Literature, rhetoric & criticism
         800 Literature (Belles-lettres) & rhetoric
         801 Philosophy & theory
@@ -1021,9 +996,7 @@ Class 800 – Literature
         897 Literatures of North American native languages
         898 Literatures of South American native languages
         899 Literatures of non-Austronesian languages of Oceania, of Austronesian languages, of miscellaneous languages
-
-Class 900 – History & geography
-
+ 900 – History & geography
     900 History
         900 History, geography, & auxiliary disciplines
         901 Philosophy & theory of history
@@ -1048,7 +1021,6 @@ Class 900 – History & geography
         919 Geography of & travel in Australasia, Pacific Ocean islands, Atlantic Ocean islands, Arctic islands, Antarctica, & on extraterrestrial worlds
     920 Biography & genealogy
         920 Biography, genealogy, insignia
-        921–928 This range is reserved as an optional location for biographies, which are shelved alphabetically by subject's last name.
         929 Genealogy, names, insignia
     930 History of ancient world (to ca. 499)
         930 History of ancient world to ca. 499
@@ -1118,7 +1090,6 @@ Class 900 – History & geography
         989 Paraguay & Uruguay
     990 History of other areas
         990 History of Australasia, Pacific Ocean islands, Atlantic Ocean islands, Arctic islands, Antarctica, extraterrestrial worlds
-        991–992 Not assigned or no longer used
         993 New Zealand
         994 Australia
         995 New Guinea & neighboring countries of Melanesia
