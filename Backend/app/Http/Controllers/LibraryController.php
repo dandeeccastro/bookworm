@@ -7,6 +7,11 @@ use App\Library;
 
 class LibraryController extends Controller
 {
+    public function index(){
+        $libraries = Library::all();
+        if ($libraries) { return response()->json($libraries); } 
+        else { return response()->error("No authors on database",400); }
+    }
     public function store(Request $req) {
         $library = new Library;
         $library->name = $req->name;
