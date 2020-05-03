@@ -19,7 +19,11 @@ class CreateLibrariesTable extends Migration
             $table->string("sort_by");
             $table->string("ticket_mode");
             $table->integer("book_amount")->unsigned()->nullable();
+            $table->unsignedBigInteger("user_id")->nullable();
             $table->timestamps();
+        });
+        Schema::table("libraries",function (Blueprint $table) {
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("set null");
         });
     }
 
