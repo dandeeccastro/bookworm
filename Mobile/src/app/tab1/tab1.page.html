@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Pesquise uma biblioteca"></ion-searchbar>
+  <ion-grid>
+    <ion-row *ngFor="let item of items">
+      <ion-card class="biblio_card">
+        <ion-grid>
+          <ion-row class="ion-justify-content-center ion-align-items-center">
+            <ion-col size="8">
+              <ion-card-title>{{item.name}}</ion-card-title>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="book">{{item.book_amount}}</ion-icon>
+            </ion-col>
+            <ion-col size="3">
+              <p>{{item.book_amount}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
