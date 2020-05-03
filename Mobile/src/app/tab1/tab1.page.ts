@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LibraryService } from '../services/library.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,25 +8,22 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  // Temporary variable that will go away one day I hope
-  libraries:any[] = [
-    {name:"Babel",book_amount:77},
-    {name:"Tipo Babel só que não",book_amount:95},
-    {name:"Big boy",book_amount:1000},
-    {name:"Nome gigante que provavelmente vai quebrar o role todo fodase quero testar aaaa",book_amount:45},
-    {name:"Babel",book_amount:77},
-    {name:"Tipo Babel só que não",book_amount:95},
-    {name:"Big boy",book_amount:1000},
-    {name:"Nome gigante que provavelmente vai quebrar o role todo fodase quero testar aaaa",book_amount:45},
-    {name:"Babel",book_amount:77},
-    {name:"Tipo Babel só que não",book_amount:95},
-    {name:"Big boy",book_amount:1000},
-    {name:"Nome gigante que provavelmente vai quebrar o role todo fodase quero testar aaaa",book_amount:45},
-    {name:"Babel",book_amount:77},
-    {name:"Tipo Babel só que não",book_amount:95},
-    {name:"Big boy",book_amount:1000},
-    {name:"Nome gigante que provavelmente vai quebrar o role todo fodase quero testar aaaa",book_amount:45},
-  ];
-  constructor() {}
+  libraries:any[] ;
+  query_results: any[];
+
+  constructor(public library_service: LibraryService) { 
+    this.library_service.getLibraries().subscribe((res) => {
+      this.query_results = res;
+      this.libraries = this.query_results;
+    });
+  }
+
+  searchLibrary(search_string:any) {
+    if (search_string !== ""){
+      this.libraries = this.query_results.filter( (item:any) => { if ( item.name.search(search_string) !== -1 ) return item.name; });
+    } else {
+      this.libraries = this.query_results;
+    }
+  }
 
 }

@@ -1,5 +1,8 @@
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Pesquise uma biblioteca" slot="fixed"></ion-searchbar>
+  <ion-searchbar 
+    placeholder="Pesquise uma biblioteca" 
+    slot="fixed"
+    (keyup)="searchLibrary($event.target.value)"></ion-searchbar>
   <ion-grid>
     <ion-row *ngFor="let item of libraries">
       <ion-card class="biblio_card">
@@ -9,7 +12,7 @@
               <ion-card-title>{{item.name}}</ion-card-title>
             </ion-col>
             <ion-col size="1">
-              <ion-icon name="book">{{item.book_amount}}</ion-icon>
+              <ion-icon name="book"></ion-icon>
             </ion-col>
             <ion-col size="3">
               <p>{{item.book_amount}}</p>
