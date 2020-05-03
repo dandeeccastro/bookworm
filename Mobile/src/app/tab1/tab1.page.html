@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Pesquise uma biblioteca"></ion-searchbar>
+  <ion-searchbar placeholder="Pesquise uma biblioteca" slot="fixed"></ion-searchbar>
   <ion-grid>
-    <ion-row *ngFor="let item of items">
+    <ion-row *ngFor="let item of libraries">
       <ion-card class="biblio_card">
         <ion-grid>
           <ion-row class="ion-justify-content-center ion-align-items-center">
@@ -16,7 +16,6 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-
       </ion-card>
     </ion-row>
   </ion-grid>
