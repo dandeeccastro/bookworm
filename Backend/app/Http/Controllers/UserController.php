@@ -41,4 +41,14 @@ class UserController extends Controller
         User::destroy($id);
         return response()->json("User destroyed",400);
     }
+		public function validateUsername($username) {
+			$users = User::all();
+			$result = false;
+			foreach ($users as $user) {
+				if ($username == $user->username){
+					$result = true;
+					break;
+				}
+			} return response()->json(["result" => $result]);
+		}
 }

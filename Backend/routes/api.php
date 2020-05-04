@@ -18,12 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('register','API/PassportController@register');
-Route::post('login','API/PassportController@login');
+Route::post('register','API\PassportController@register');
+Route::post('login','API\PassportController@login');
 
 Route::group(['middleware' => 'auth:api'], function() {
-    Route::get('logout','API/PassportController@logout');
-    Route::post('getDetails','API/PassportController@getDetails');
+    Route::get('logout','API\PassportController@logout');
+    Route::post('getDetails','API\PassportController@getDetails');
 });
 
 Route::get("/author","AuthorController@index");
@@ -68,3 +68,4 @@ Route::post("/user","UserController@store");
 Route::get("/user/{id}","UserController@show");
 Route::put("/user/{id}","UserController@update");
 Route::delete("/user/{id}","UserController@destroy");
+Route::get("/user/validate/{username}","UserController@validateUsername");
