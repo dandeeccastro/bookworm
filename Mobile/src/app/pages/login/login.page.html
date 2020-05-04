@@ -1,0 +1,26 @@
+<ion-content>
+	<form [formGroup]="login_form" (ngSubmit)="onSubmit(login_form.value)">
+		<ion-card>
+			<ion-grid>
+				<ion-row class="ion-justify-content-center ion-padding-vertical">
+					<ion-card-title>Login</ion-card-title>
+					<ion-icon name="person-outline" size="large"></ion-icon>
+				</ion-row>
+				<ion-row class="ion-justify-content-center ion-padding-vertical">
+					<ion-item>
+						<ion-label position="floating">Username</ion-label>
+						<ion-input (ionBlur)="validateUsername($event.target.value)" required type='text' formControlName="username"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label position="floating">Password</ion-label>
+						<ion-input required  type='password' formControlName="password"></ion-input>
+					</ion-item>
+				</ion-row>
+				<ion-row class="ion-justify-content-center ion-padding-vertical">
+					<ion-button type="submit">Login</ion-button>
+					<p>Não tem conta? Então <a href="/register">cadastre-se aqui!</a></p>
+				</ion-row>
+			</ion-grid>
+		</ion-card>
+	</form>
+</ion-content>
