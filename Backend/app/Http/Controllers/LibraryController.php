@@ -12,6 +12,15 @@ class LibraryController extends Controller
         if ($libraries) { return response()->json($libraries); } 
         else { return response()->error("No authors on database",400); }
     }
+		public function show($id) {
+				$library = Library::findOrFail($id);
+				if($library){ 
+					$library->content = $library->books();
+					$library->user;
+					return response()->json($library); 
+				}
+				else return response()->error("Library not found",400);
+		}
     public function store(Request $req) {
         $library = new Library;
         $library->name = $req->name;
