@@ -1,9 +1,95 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+	<form [formGroup]="register_form" (ngSubmit)="onSubmit(register_form.value)">
+		<ion-icon 
+			size="large" 
+			position="fixed" 
+			slot="end" 
+			name="arrow-back-outline"
+			(click)="goToPreviousCard()"></ion-icon>
+		<ion-slides scrollbar="true" [options]="slider_options">
+			<ion-slide>
+				<ion-card class="form_card">
+					<ion-grid>
+						<ion-row class="ion-justify-content-center">
+							<ion-card-title>Informações do Usuário</ion-card-title>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Nome</ion-label>
+								<ion-input type="text" required formControlName="name"></ion-input>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Username</ion-label>
+								<ion-input (ionBlur)="validateUsername($event.target.value)" type="text" required formControlName="username"></ion-input>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Email</ion-label>
+								<ion-input type="email" required formControlName="email"></ion-input>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-button [disabled]="is_username_being_used" 
+								(click)="goToNextCard()">Confirmar</ion-button>
+						</ion-row>
+					</ion-grid>
+				</ion-card>
+			</ion-slide>
+			<ion-slide>
+				<ion-card class="form_card">
+					<ion-grid>
+						<ion-row class="ion-justify-content-center">
+							<ion-card-title>Senha e Segurança</ion-card-title>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Senha</ion-label>
+								<ion-input type="password" required formControlName="password"></ion-input>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Confirmar Senha</ion-label>
+								<ion-input type="password" required formControlName="c_password"></ion-input>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-button (click)="goToNextCard()">Confirmar</ion-button>
+						</ion-row>
+					</ion-grid>
+				</ion-card>
+			</ion-slide>
+			<ion-slide>
+				<ion-card class="form_card">
+					<ion-grid>
+						<ion-row class="ion-justify-content-center" id="final_card_title_row">
+							<ion-card-title>{{register_form.value.name}}</ion-card-title>
+							<ion-card-subtitle>@{{register_form.value.username}}</ion-card-subtitle>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-item>
+								<ion-label position="floating">Email: </ion-label>
+								<p>{{register_form.value.email}}</p>
+							</ion-item>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<p>Isso está correto?</p>
+						</ion-row>
+						<ion-row class="ion-justify-content-center">
+							<ion-col>
+								<ion-button (click)="goToStartCard()">Não</ion-button>
+							</ion-col>
+							<ion-col>
+								<ion-button type="submit">Sim</ion-button>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</ion-card>
+			</ion-slide>
+		</ion-slides>
+	</form>
 
 </ion-content>
