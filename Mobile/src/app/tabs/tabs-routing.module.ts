@@ -23,6 +23,10 @@ const routes: Routes = [
 				path: 'register',
 				loadChildren: () => import('../pages/register/register.module').then(m => m.RegisterPageModule)
 			},
+			{
+				path: 'library/:libraryID',
+				loadChildren: () => import('../pages/library/library.module').then(m => m.LibraryPageModule)
+			},
       {
         path: '',
         redirectTo: '/tabs/tab1',
