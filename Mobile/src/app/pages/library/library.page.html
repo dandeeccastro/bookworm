@@ -1,0 +1,26 @@
+<ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-title>{{library?.name}}</ion-title>
+		</ion-row>
+		<ion-row>
+			<p>by @{{library?.user.username}}</p>
+		</ion-row>
+		<ion-row>
+			<ion-col size="10">
+				<ion-searchbar placeholder="Procure um livro!"></ion-searchbar>
+			</ion-col>
+			<ion-col size="2">
+				<!-- TODO: mudar pra disabled assim que conseguir implementar a view de shelf -->
+				<ion-toggle checked></ion-toggle>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-grid *ngIf="library?.book_amount">
+				<p>Tem coisa</p>
+			</ion-grid>
+			<p *ngIf="!library?.book_amount"> Não tem coisa</p>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

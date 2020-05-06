@@ -5,7 +5,7 @@
     (keyup)="searchLibrary($event.target.value)"></ion-searchbar>
   <ion-grid>
     <ion-row *ngFor="let item of libraries">
-      <ion-card class="biblio_card">
+			<ion-card class="biblio_card" href="/tabs/library/{{item.id}}">
         <ion-grid>
           <ion-row class="ion-justify-content-center ion-align-items-center">
             <ion-col size="8">
