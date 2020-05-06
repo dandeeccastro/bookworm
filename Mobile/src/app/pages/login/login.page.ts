@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from "../../services/auth.service";
 import { ToastController } from "@ionic/angular";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
   constructor(
 		public fb:FormBuilder,
 		public auth_service: AuthService,
-		public toast_controller: ToastController) { 
+		public toast_controller: ToastController,
+		public router: Router) { 
 	}
 
   ngOnInit() {
@@ -35,6 +37,11 @@ export class LoginPage implements OnInit {
 	}
 	
 	onSubmit(login_data:any){
+		this.auth_service.login(login_data).subscribe((res) => {
+			localStorage.setItem("userInfo",JSON.stringify(res));
+			this.auth_service.logged.emit(true);
+			this.router.navigate(["tabs/tab1"]);	
+		});
 		console.log(login_data);
 	}
 
