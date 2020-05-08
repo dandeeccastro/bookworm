@@ -17,8 +17,8 @@ class BookLibrary extends Migration
             $table->id();
             $table->unsignedBigInteger("book_id")->nullable();
             $table->unsignedBigInteger("library_id")->nullable();
-            $table->string("dewey");
-            $table->integer("index")->unsigned();
+            $table->string("dewey")->nullable();
+            $table->integer("index")->unsigned()->nullable();
             $table->timestamps();
         });
         Schema::table("book_library", function (Blueprint $table) {

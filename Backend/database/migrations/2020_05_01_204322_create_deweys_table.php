@@ -15,7 +15,7 @@ class CreateDeweysTable extends Migration
     {
         Schema::create('deweys', function (Blueprint $table) {
             $table->id();
-            $table->integer("parent")->unsigned();
+            $table->integer("parent")->unsigned()->nullable();
             $table->integer("number")->unsigned();
             $table->string("category");
             $table->timestamps();
