@@ -16,9 +16,7 @@ class DatabaseSeeder extends Seeder
             AuthorSeeder::class,
             PublisherSeeder::class,
             BookSeeder::class,
-            LibrarySeeder::class,
-            // ShelfSeeder::class,
-            // DeweySeeder::class,
+            DeweySeeder::class,
         ]);
     }
 }

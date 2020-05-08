@@ -91,7 +91,7 @@
         097 Books notable for ownership or origin
         098 Prohibited works, forgeries, and hoaxes
         099 Books notable for format
- 100 – Philosophy & psychology
+ 100 @@@@@ Philosophy & psychology
     100 Philosophy
         100 Philosophy & psychology
         101 Theory of philosophy
@@ -199,7 +199,7 @@
         197 Philosophy of Russia
         198 Philosophy of Scandinavia & Finland
         199 Philosophy in other geographic areas
- 200 – Religion
+ 200 @@@@@ Religion
     200 Religion
         200 Religion
         201 Religious mythology, general classes of religion, interreligious relations and attitudes, social theology
@@ -310,7 +310,7 @@
         297 Islam, Bábism & Bahá'í Faith
         298 No longer used—formerly Mormonism
         299 Religions not provided for elsewhere
- 300 – Social sciences
+ 300 @@@@@ Social sciences
     300 Social sciences, sociology & anthropology
         300 Social sciences
         301 Sociology & anthropology
@@ -421,7 +421,7 @@
         397 No longer used—formerly outcast studies
         398 Folklore
         399 Customs of war & diplomacy
- 400 – Language
+ 400 @@@@@ Language
     400 Language
         400 Language
         401 Philosophy & theory; international languages
@@ -532,7 +532,7 @@
         497 North American native languages
         498 South American native languages
         499 Non-Austronesian languages of Oceania, Austronesian languages, miscellaneous languages
- 500 – Science
+ 500 @@@@@ Science
     500 Science
         500 Natural sciences & mathematics
         501 Philosophy & theory
@@ -643,7 +643,7 @@
         597 Cold-blooded vertebrates
         598 Aves (Birds)
         599 Mammalia (Mammals)
- 600 – Technology
+ 600 @@@@@ Technology
     600 Technology
         600 Technology (Applied sciences)
         601 Philosophy & theory
@@ -774,7 +774,7 @@
         697 Heating, ventilating, air-conditioning engineering
         698 Detail finishing
         699 Not assigned or no longer used
- 700 – Arts & recreation
+ 700 @@@@@ Arts & recreation
     700 Arts
         700 The Arts
         701 Philosophy & theory of fine & decorative arts
@@ -884,7 +884,7 @@
         797 Aquatic & air sports
         798 Equestrian sports & animal racing
         799 Fishing, hunting, shooting
- 800 – Literature
+ 800 @@@@@ Literature
     800 Literature, rhetoric & criticism
         800 Literature (Belles-lettres) & rhetoric
         801 Philosophy & theory
@@ -996,7 +996,7 @@
         897 Literatures of North American native languages
         898 Literatures of South American native languages
         899 Literatures of non-Austronesian languages of Oceania, of Austronesian languages, of miscellaneous languages
- 900 – History & geography
+ 900 @@@@@ History & geography
     900 History
         900 History, geography, & auxiliary disciplines
         901 Philosophy & theory of history
@@ -1097,3 +1097,4 @@
         997 Atlantic Ocean islands
         998 Arctic islands & Antarctica
         999 Extraterrestrial worlds
+00001 Dummy
