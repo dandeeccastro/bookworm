@@ -44,6 +44,7 @@ Route::delete("/dewey/{id}","DeweyController@destroy");
 
 Route::get("/library","LibraryController@index");
 Route::get("/library/{id}","LibraryController@show");
+Route::post("/library/{id}/book","LibraryController@addBooks");
 Route::post("/library","LibraryController@store");
 Route::put("/library/{id}","LibraryController@update");
 Route::delete("/library/{id}","LibraryController@destroy");

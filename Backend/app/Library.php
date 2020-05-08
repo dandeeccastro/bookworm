@@ -13,6 +13,6 @@ class Library extends Model
         return $this->belongsTo('App\User');
     }
     public function books(){
-        return $this->hasMany('App\Book');
+        return $this->belongsToMany('App\Book');
     }
 }
