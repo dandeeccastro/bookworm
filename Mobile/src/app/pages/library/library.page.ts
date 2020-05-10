@@ -24,7 +24,7 @@ export class LibraryPage implements OnInit {
 		}
 
 		DEBUG() {
-			let no: any = {"existing":[{"id":1},{"id":2},{"id":3}]}
-			this.library_service.addBooks(this.library.id,no).subscribe((res)=>{console.log(res)})
+			let no: any = {"shelves":[{"rows":5,"capacity":100,"index":1}]}
+			this.library_service.addShelves(this.library.id,no).subscribe((res)=>{console.log(res)})
 		}
 }

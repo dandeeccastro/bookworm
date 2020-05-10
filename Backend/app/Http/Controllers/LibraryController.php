@@ -45,4 +45,32 @@ class LibraryController extends Controller
         Library::destroy($id);
         return response()->json("Library destroyed",400);
     }
+
+		// Expects existing and new as request items
+		// existing contains ids for books that are already in the database
+		// new contains new books that should be added to the database
+		public function addBooks(Request $req,$id) {
+			$library = Library::findOrFail($id);
+			if($library) { 
+				foreach ($req->existing as $book) {
+					$library->books()->attach($book["id"]);
+				} return response()->json($library->books);
+			}
+		}
+
+		public function addShelves(Request $req, $id) {
+			$library = Library::findOrFail($id);
+			if($library) {
+				foreach ($req->shelves as $item) {
+					$shelf = new App\Shelf;
+
+					$shelf->rows = $item["rows"];
+					$shelf->capacity = $item["capacity"];
+					$shelf->index = $item["index"];
+					$shelf->library_id = $id;
+					$shelf->save();
+
+				} return response()->json($library->shelves);
+			}
+		}
 }
