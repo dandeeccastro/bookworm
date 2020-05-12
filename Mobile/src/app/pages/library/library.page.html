@@ -16,12 +16,8 @@
 			</ion-col>
 		</ion-row>
 		<ion-row>
-			<ion-grid *ngIf="library?.book_amount">
-				<p>Tem coisa</p>
-			</ion-grid>
-			<p *ngIf="!library?.book_amount"> Não tem coisa</p>
+			<app-shelf class="ion-justify-content-center" [library]="library"></app-shelf>
 		</ion-row>
-		<ion-button (click)='DEBUG()'>DEBUG</ion-button>
 	</ion-grid>
 
 </ion-content>

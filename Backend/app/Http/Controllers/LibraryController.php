@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Library;
+use App\Shelf;
 
 class LibraryController extends Controller
 {
@@ -15,7 +16,7 @@ class LibraryController extends Controller
 		public function show($id) {
 				$library = Library::findOrFail($id);
 				if($library){ 
-					$library->content = $library->books();
+					$library->books;
 					$library->user;
 					return response()->json($library); 
 				}
@@ -54,7 +55,9 @@ class LibraryController extends Controller
 			if($library) { 
 				foreach ($req->existing as $book) {
 					$library->books()->attach($book["id"]);
-				} return response()->json($library->books);
+				} $library->book_amount = count($library->books); 
+				$library->save();
+				return response()->json($library->books);
 			}
 		}
 
@@ -62,7 +65,7 @@ class LibraryController extends Controller
 			$library = Library::findOrFail($id);
 			if($library) {
 				foreach ($req->shelves as $item) {
-					$shelf = new App\Shelf;
+					$shelf = new Shelf;
 
 					$shelf->rows = $item["rows"];
 					$shelf->capacity = $item["capacity"];
