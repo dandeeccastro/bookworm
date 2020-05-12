@@ -13,13 +13,8 @@ class UserController extends Controller
         else { return response()->error("No users on database",400); }
     }
     public function store(Request $req) {
-        $user = new User;
-        $user->name = $req->name;
-        $user->username = $req->username;
-        $user->email = $req->email;
-        $user->password = $req->password;
-        $user->save();
-        return response()->json([$user]);
+			$user = User::create($req);
+			return response()->json($user);
     }
     public function show($id) {
         $user = User::findOrFail($id);
@@ -27,15 +22,9 @@ class UserController extends Controller
         else return response()->error("User doesn't exist",400);
     }
     public function update(Request $req, $id) {
-        $user = User::findOrFail($id);
-        if ($user){
-            if ($req->name) { $user->name = $req->name; }
-            if ($req->username) { $user->username = $req->username; }
-            if ($req->email) { $user->email = $req->email; }
-            if ($req->password) { $user->password = $req->password; }
-            $user->save();
-            return response()->json([$user]);
-        } else { return response()->json("User doesn't exist",400); }
+			$user = User::update($req,$id);
+			if($user){ return response()->json($user); } 
+			else { return response()->json("User doesn't exist",400); }
     }
     public function destroy($id) {
         User::destroy($id);

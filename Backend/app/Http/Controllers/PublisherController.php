@@ -13,10 +13,8 @@ class PublisherController extends Controller
         else { return response()->error("No publishers on database",400); }
     }
     public function store(Request $req) {
-        $publisher = new Publisher;
-        $publisher->name = $req->name;
-        $publisher->save();
-        return response()->json([$publisher]);
+			$publisher = Publisher::create($req);
+			return response()->json([$publisher]);
     }
     public function show($id) {
         $publisher = Publisher::findOrFail($id);
@@ -24,12 +22,9 @@ class PublisherController extends Controller
         else return response()->error("Publisher doesn't exist",400);
     }
     public function update(Request $req, $id) {
-        $publisher = Publisher::findOrFail($id);
-        if ($publisher){
-            if ($req->name) { $publisher->name = $req->name; }
-            $publisher->save();
-            return response()->json([$publisher]);
-        } else { return response()->json("Publisher doesn't exist",400); }
+        $publisher = Publisher::update($req,$id);
+        if ($publisher){ return response()->json($publisher); }
+        else { return response()->json("Publisher doesn't exist",400); }
     }
     public function destroy($id) {
         Publisher::destroy($id);

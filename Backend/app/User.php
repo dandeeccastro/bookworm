@@ -39,6 +39,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+		public function create($request)
+		{
+			$user = new User;
+			$user->name = $request->name;
+			$user->username = $request->username;
+			$user->email = $request->email;
+			$user->password = $request->password;
+			$user->save();
+			return $user;
+		}
+		public function update($request,$id)
+		{
+        $user = User::findOrFail($id);
+				if ($user)
+				{
+            if ($request->name) { $user->name = $request->name; }
+            if ($request->username) { $user->username = $request->username; }
+            if ($request->email) { $user->email = $request->email; }
+            if ($request->password) { $user->password = $request->password; }
+            $user->save();
+						return $user;
+				}
+				else return null;
+		}
     public function libraries() {
         return $this->hasMany('App\Library');
     }

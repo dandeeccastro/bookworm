@@ -13,10 +13,8 @@ class SeriesController extends Controller
         else { return response()->error("No series on database",400); }
     }
     public function store(Request $req) {
-        $series = new Series;
-        $series->name = $req->name;
-        $series->save();
-        return response()->json([$series]);
+			$series = Series::create($req);
+			return response()->json($series);
     }
     public function show($id) {
         $series = Series::findOrFail($id);
@@ -24,12 +22,9 @@ class SeriesController extends Controller
         else return response()->error("Series doesn't exist",400);
     }
     public function update(Request $req, $id) {
-        $series = Series::findOrFail($id);
-        if ($series){
-            if ($req->name) { $series->name = $req->name; }
-            $series->save();
-            return response()->json([$series]);
-        } else { return response()->json("Series doesn't exist",400); }
+			$series = Series::update($req,$id);
+			if($series) { return response()->json($series); } 
+			else { return response()->json("Series doesn't exist",400); }
     }
     public function destroy($id) {
         Series::destroy($id);
