@@ -22,7 +22,7 @@ class UserController extends Controller
         else return response()->error("User doesn't exist",400);
     }
     public function update(Request $req, $id) {
-			$user = User::update($req,$id);
+			$user = User::change_data($req,$id);
 			if($user){ return response()->json($user); } 
 			else { return response()->json("User doesn't exist",400); }
     }

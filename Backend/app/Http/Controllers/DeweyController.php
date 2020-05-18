@@ -12,7 +12,7 @@ class DeweyController extends Controller
         return response()->json($item);
     }
     public function update(Request $req, $id) {
-        $item = Dewey::update($req,$id);
+        $item = Dewey::change_data($req,$id);
 				if ($item){return response()->json([$item]);} 
 				else { return response()->error("Item not found", 400);  }
     }

@@ -49,7 +49,7 @@ class User extends Authenticatable
 			$user->save();
 			return $user;
 		}
-		public function update($request,$id)
+		public function change_data($request,$id)
 		{
         $user = User::findOrFail($id);
 				if ($user)

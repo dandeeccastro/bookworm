@@ -22,7 +22,7 @@ class Book extends Model
 
 		return $book;
 	}
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$book = Book::findOrFail($id);
 		if($book)

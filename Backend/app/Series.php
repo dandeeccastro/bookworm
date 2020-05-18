@@ -13,7 +13,7 @@ class Series extends Model
 		$series->save();
 		return $series;
 	}
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$series = Series::findOrFail($id);
 		if ($series)

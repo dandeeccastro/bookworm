@@ -19,7 +19,7 @@ class Library extends Model
 
 		return $library;
 	}
-	public function update($request, $id)
+	public function change_data($request, $id)
 	{
 		$library = Library::findOrFail($id);
 		if($library)

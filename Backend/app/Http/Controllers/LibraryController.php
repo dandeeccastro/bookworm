@@ -15,9 +15,12 @@ class LibraryController extends Controller
     }
 		public function show($id) {
 				$library = Library::findOrFail($id);
-				if($library){ 
-					$library->books;
+				if($library)
+				{ 
+					$library->books = $this->orderBooksByShelves($library->books,$library->shelves);
+					$library->shelves;
 					$library->user;
+
 					return response()->json($library); 
 				}
 				else return response()->error("Library not found",400);
@@ -27,7 +30,7 @@ class LibraryController extends Controller
         return response()->json([$library]);
     }
     public function update(Request $req, $id) {
-			$library = Library::update($req,$id);
+			$library = Library::change_data($req,$id);
 			if ($library) { return $library; }
 			else { return response()->json("Library doesn't exist",400); }
     }
@@ -64,5 +67,16 @@ class LibraryController extends Controller
 
 				} return response()->json($library->shelves);
 			}
+		}
+
+		/**
+		 * Rows capacity = capacity
+		 * Shelf capacity = capacity * rows
+		 * Total library capacity = shelves * rows * capacity
+		 */
+		private function orderBooksByShelves($books,$shelves)
+		{
+			$book_count = count($books);
+			$rows = $book_count % $shelves
 		}
 }

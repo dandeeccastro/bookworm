@@ -12,7 +12,7 @@ class ShelfController extends Controller
         return response()->json([$shelf]);
     }
     public function update(Request $req, $id) {
-        $shelf = Shelf::update($req,$id);
+        $shelf = Shelf::change_data($req,$id);
 				if ($shelf){ return response()->json($shelf); } 
 				else { return response()->json("Shelf doesn't exist",400); }
     }

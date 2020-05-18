@@ -22,7 +22,7 @@ class AuthorController extends Controller
         else return response()->error("Author doesn't exist",400);
     }
     public function update(Request $req, $id) {
-			$author = Author::update($req,$id);
+			$author = Author::change_data($req,$id);
 			if ($author)
 			{
 				return response()->json($author);

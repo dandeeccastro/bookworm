@@ -16,7 +16,7 @@ class Shelf extends Model
 		$shelf->save();
 		return $shelf;
 	}
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$shelf = Shelf::findOrFail($id);
 		if($shelf)

@@ -13,7 +13,7 @@ class Author extends Model
 		$author->save();
 		return $author;
 	}
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$author = Author::findOrFail($id);
 		if ($author)

@@ -22,7 +22,7 @@ class BookController extends Controller
         else return response()->error("Book doesn't exist",400);
     }
     public function update(Request $req, $id) {
-			$book = Book::update($req,$id);
+			$book = Book::change_data($req,$id);
 			if($book)
 			{
 				return response()->json($book);

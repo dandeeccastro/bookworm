@@ -13,7 +13,7 @@ class Publisher extends Model
 		$publisher->save();
 		return $publisher;
 	}
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$publisher = Publisher::findOrFail($id);
 		if($publisher)

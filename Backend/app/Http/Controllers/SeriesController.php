@@ -22,7 +22,7 @@ class SeriesController extends Controller
         else return response()->error("Series doesn't exist",400);
     }
     public function update(Request $req, $id) {
-			$series = Series::update($req,$id);
+			$series = Series::change_data($req,$id);
 			if($series) { return response()->json($series); } 
 			else { return response()->json("Series doesn't exist",400); }
     }

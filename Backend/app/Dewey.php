@@ -18,7 +18,7 @@ class Dewey extends Model
 		return $dewey;
 	}
 
-	public function update($request,$id)
+	public function change_data($request,$id)
 	{
 		$dewey = Dewey::findOrFail($id);
 		if($dewey)

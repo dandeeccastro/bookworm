@@ -22,7 +22,7 @@ class PublisherController extends Controller
         else return response()->error("Publisher doesn't exist",400);
     }
     public function update(Request $req, $id) {
-        $publisher = Publisher::update($req,$id);
+        $publisher = Publisher::change_data($req,$id);
         if ($publisher){ return response()->json($publisher); }
         else { return response()->json("Publisher doesn't exist",400); }
     }
