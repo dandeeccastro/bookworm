@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { LibraryService } from "../../services/library.service";
 
 @Component({
   selector: 'app-shelf',
@@ -7,13 +8,18 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ShelfComponent implements OnInit {
 
-	@Input() library:any;
+	@Input() id:number;
+	library_data:any;
 
-  constructor() { 
+  constructor( public library_service: LibraryService ) { 
 	}
 
   ngOnInit() {
-		console.log(library)
+		this.library_service.getLibraryData(this.id).subscribe( (res) => {
+			this.library_data = res;
+			console.log("> [shelf.component] Printing library_data" )
+			console.log(this.library_data)
+		});
 	}
 
 }
