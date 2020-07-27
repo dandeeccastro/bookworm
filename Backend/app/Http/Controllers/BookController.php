@@ -23,7 +23,7 @@ class BookController extends Controller
 		$book->title = $req->title;
 		$book->description = $req->description;
 		$book->author_id = $req->author_id;
-		$book->book_id = $req->book_id;
+		$book->publisher_id = $req->publisher_id;
 
 		$book->save();
 		return response()->json($book);
