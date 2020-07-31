@@ -1,23 +1,12 @@
 <ion-content>
-	<ion-grid>
-		<ion-row>
-			<ion-title>{{library?.name}}</ion-title>
-		</ion-row>
-		<ion-row>
-			<p>by @{{library?.user.username}}</p>
-		</ion-row>
-		<ion-row>
-			<ion-col size="10">
-				<ion-searchbar placeholder="Procure um livro!"></ion-searchbar>
-			</ion-col>
-			<ion-col size="2">
-				<!-- TODO: mudar pra disabled assim que conseguir implementar a view de shelf -->
-				<ion-toggle checked></ion-toggle>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<app-shelf class="ion-justify-content-center" [id]="id"></app-shelf>
-		</ion-row>
-	</ion-grid>
-
+	<p> TO BE IMPLEMENTED </p>
+	<div *ngIf="books ? books.length : null">
+		<ul *ngFor="let item of books">
+			<li>{{ item.title }} </li>
+		</ul>
+	</div>
+	<div *ngIf="books? !books.length : null">
+		<p> Não tem livros ainda nessa biblioteca </p>
+	</div>
 </ion-content>
+

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { LibraryPageRoutingModule } from './library-routing.module';
 
 import { LibraryPage } from './library.page';
-import { ShelfComponent } from '../../components/shelf/shelf.component';
 
 @NgModule({
   imports: [
@@ -16,6 +15,6 @@ import { ShelfComponent } from '../../components/shelf/shelf.component';
     IonicModule,
     LibraryPageRoutingModule,
   ],
-  declarations: [LibraryPage,ShelfComponent]
+  declarations: [LibraryPage]
 })
 export class LibraryPageModule {}
