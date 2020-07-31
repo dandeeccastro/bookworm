@@ -8,10 +8,15 @@ use App\Shelf;
 
 class LibraryController extends Controller
 {
-	public function index(){
+	public function index()
+	{
 		$libraries = Library::all();
-		if ($libraries) { return response()->json($libraries); } 
-		else { return response()->error("No authors on database",400); }
+		if ($libraries) { 
+			return response()->json($libraries); 
+		} 
+		else { 
+			return response()->error("No authors on database",400); 
+		}
 	}
 	public function show($id) {
 		$library = Library::findOrFail($id);
@@ -26,7 +31,9 @@ class LibraryController extends Controller
 	{
 		$library = Library::findOrFail($id);
 		if ($library)
-			return response()->json($this->orderBooksByShelves($library->books,$library->shelves));
+			return response()->json([
+				"books" => $library->books,
+			]);
 
 		else return response()->error("Library not found",400);
 	}
@@ -74,11 +81,13 @@ class LibraryController extends Controller
 		}
 	}
 
+	
 	/**
+	 * COMENTADO PORQUE É UMA FUNÇÃO LINDA MAS INUTIL
+	 *
 	 * Rows capacity = capacity
 	 * Shelf capacity = capacity * rows
 	 * Total library capacity = shelves * rows * capacity
-	 */
 	private function orderBooksByShelves($books,$shelves)
 	{
 		// Proper conversion of books object to array
@@ -105,4 +114,5 @@ class LibraryController extends Controller
 
 		return $result;
 	}
+	 */
 }
