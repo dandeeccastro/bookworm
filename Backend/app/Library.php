@@ -33,9 +33,6 @@ class Library extends Model
 		}
 		else return null;
 	}
-    public function shelves() {
-        return $this->hasMany('App\Shelf');
-    }
     public function user() {
         return $this->belongsTo('App\User');
     }

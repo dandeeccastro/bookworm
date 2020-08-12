@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LibraryPageRoutingModule } from './library-routing.module';
 
 import { LibraryPage } from './library.page';
+import { AddBookModalComponent } from '../../components/add-book-modal/add-book-modal.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { LibraryPage } from './library.page';
     IonicModule,
     LibraryPageRoutingModule,
   ],
-  declarations: [LibraryPage]
+  declarations: [LibraryPage, AddBookModalComponent],
+	entryComponents: [AddBookModalComponent] 
 })
 export class LibraryPageModule {}

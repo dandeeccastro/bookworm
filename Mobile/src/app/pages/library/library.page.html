@@ -1,12 +1,25 @@
 <ion-content>
-	<p> TO BE IMPLEMENTED </p>
+
+	<h1> {{ library?.name}} </h1>
+
+	<!-- Quando temos livros -->
 	<div *ngIf="books ? books.length : null">
 		<ul *ngFor="let item of books">
 			<li>{{ item.title }} </li>
 		</ul>
 	</div>
-	<div *ngIf="books? !books.length : null">
-		<p> Não tem livros ainda nessa biblioteca </p>
+
+	<!-- Quando não temos livros --> 
+	<div *ngIf="books ? !books.length : null">
+		<p> TEMPORÀRIO: AINDA NÃO TEM COISA AQUI </p>
 	</div>
+
+	<!-- Botão para adicionar livros na biblioteca -->
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button (click)="presentModal()">
+			<ion-icon name="add"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+
 </ion-content>
 

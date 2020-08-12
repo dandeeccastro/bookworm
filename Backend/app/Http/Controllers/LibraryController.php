@@ -33,6 +33,7 @@ class LibraryController extends Controller
 		if ($library)
 			return response()->json([
 				"books" => $library->books,
+				"library" => $library,
 			]);
 
 		else return response()->error("Library not found",400);
@@ -64,55 +65,4 @@ class LibraryController extends Controller
 			return response()->json($library->books);
 		}
 	}
-
-	public function addShelves(Request $req, $id) {
-		$library = Library::findOrFail($id);
-		if($library) {
-			foreach ($req->shelves as $item) {
-				$shelf = new Shelf;
-
-				$shelf->rows = $item["rows"];
-				$shelf->capacity = $item["capacity"];
-				$shelf->index = $item["index"];
-				$shelf->library_id = $id;
-				$shelf->save();
-
-			} return response()->json($library->shelves);
-		}
-	}
-
-	
-	/**
-	 * COMENTADO PORQUE É UMA FUNÇÃO LINDA MAS INUTIL
-	 *
-	 * Rows capacity = capacity
-	 * Shelf capacity = capacity * rows
-	 * Total library capacity = shelves * rows * capacity
-	private function orderBooksByShelves($books,$shelves)
-	{
-		// Proper conversion of books object to array
-		$resource = array();
-		foreach ($books as $book)
-		{
-			array_push($resource,$book);
-		}
-
-		$result = array();
-
-		for ($i = 0;$i < count($shelves); $i++)
-		{
-			array_push($result,array());
-
-			for($j = 0; $j < $shelves[$i]["rows"];$j++)
-			{
-				if ($i * $j >= count($resource))
-					break;
-
-				array_push($result[$i],array_splice($resource,$i * $j,$i * $j + $shelves[$i]["capacity"]));
-			}
-		}
-
-		return $result;
-	}
-	 */
 }

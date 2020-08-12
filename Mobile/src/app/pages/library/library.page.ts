@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { LibraryService } from "../../services/library.service";
 import { ActivatedRoute } from "@angular/router";
+
+import { AddBookModalComponent } from '../../components/add-book-modal/add-book-modal.component';
+import { ModalController } from '@ionic/angular';
+
+import { LibraryService } from "../../services/library.service";
 
 @Component({
 	selector: 'app-library',
@@ -10,19 +14,32 @@ import { ActivatedRoute } from "@angular/router";
 export class LibraryPage implements OnInit {
 
 	books: any;
-	id: number;
+	library: any;
 
 	constructor(
-		public library_service: LibraryService,
-		private route: ActivatedRoute) { }
+		private library_service: LibraryService,
+		private route: ActivatedRoute,
+		private modalController: ModalController) { }
 
-		ngOnInit() {
-			this.route.paramMap.subscribe(params => {
-				this.id = Number(params.get('libraryID'));
-				this.library_service.getLibraryData(this.id).subscribe((res) => { 
-					this.books = res.books;
-					console.log(this.books)
-				})	
-			})
-		}
+	ngOnInit() {
+		this.route.paramMap.subscribe( params => {
+			let id: number = Number( params.get('libraryID') );
+			this.gatherLibraryInformation( id );
+		});
+	}
+
+	private gatherLibraryInformation(libraryID: number): void { 
+		this.library_service.getLibraryData( libraryID ).subscribe((res) => { 
+			this.books = res.books;
+			this.library = res.library;
+		});
+	}
+
+	public async presentModal() {
+		const modal = await this.modalController.create({
+			component: AddBookModalComponent
+		});
+
+		return await modal.present();
+	}
 }

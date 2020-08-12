@@ -63,10 +63,6 @@ Route::get("/series/{id}","SeriesController@show");
 Route::put("/series/{id}","SeriesController@update");
 Route::delete("/series/{id}","SeriesController@destroy");
 
-Route::post("/shelf","ShelfController@store");
-Route::put("/shelf/{id}","ShelfController@update");
-Route::delete("/shelf/{id}","ShelfController@destroy");
-
 Route::get("/user","UserController@index");
 Route::post("/user","UserController@store");
 Route::get("/user/{id}","UserController@show");
